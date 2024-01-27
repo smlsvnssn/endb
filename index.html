@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300&family=Outfit:wght@400..900&display=swap"
+            rel="stylesheet"
+        />
+        <title>endatabas</title>
+    </head>
+    <body>
+        <!--         <div id="app"></div> -->
+        <header>
+            <div class="logo">endatabas</div>
+            <nav>
+                <ul>
+                    <li><a class="book" href="#">The book</a></li>
+                    <li><a class="cat" href="#">The code</a></li>
+                    <li>
+                        <a class="quote" href="#">The bibliography</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="raster">endb.</h1>
+                <p class="preamble raster">
+                    A database. One database. <br />
+                    The immutable schemaless strongly typed SQL document
+                    database with full history.
+                </p>
+                <p>
+                    <b>Endb</b> is an open source immutable database. It
+                    benefits from today's confluence of scale-out computing
+                    power, limitless disk space, and machine learning.
+                </p>
+                <p>
+                    We hope you will enjoy using it as much as you enjoyed
+                    writing your first program.
+                </p>
+                <nav>
+                    <a href="#" class="btn red">Read the book</a>
+                    <a href="#" class="btn blood">Try the alpha</a>
+                    <a href="#" class="btn purple">Watch the demo</a>
+                </nav>
+            </section>
+
+            <section>
+                <p>Explore what you can do with it:</p>
+                <pre>
+<span class="st">insert into</span> papers (<span class="var">id</span>, <span class="var">author_id</span>, <span class="var">title</span>, <span class="var">year</span>)
+<span class="st">values</span> (<span class="num">1</span>, <span class="num">1</span>, <span class="str">'What if Mass Storage Were Free?'</span>, <span class="num">1680</span>);
+
+select * <span class="st">from</span> papers; <a href="#">Run code</a></pre>
+                <p>
+                    <b>Endb</b> is schemaless. You don’t need
+                    <span class="st">create table</span> — tables are
+                    dynamically created when you insert data. The above SQL is
+                    valid as soon as you start endb.
+                </p>
+            </section>
+
+            <section>
+                <h3>Where are my typos?</h3>
+                <pre><span class="st">update</span> papers <span class="st">set</span> <span class="var">year</span> = <span class="num">1980</span> <span class="st">where</span> <span class="var">id</span> = <span class="num">1</span>;
+                    
+<span class="st">select</span> * <span class="st">from</span> papers; 
+
+<span class="st">select</span> * <span class="st">from</span> <span class="st">for</span> <span class="var">SYSTEM_TIME</span> <span class="st">as of</span> <span class="num">2023-08-17T00:00:00</span>;  <a href="#">Run code</a>
+                </pre>
+                <p>
+                    <b>Endb</b> is immutable, so it does not permit destructive
+                    <span class="st">update</span>
+                    or <span class="st">delete</span>. If you run an
+                    <span class="st">update</span>, your previous
+                    <span class="st">insert</span> isn't lost. To see the old
+                    version, you can time-travel back to a time when the old
+                    record was visible.
+                </p>
+            </section>
+
+            <section>
+                <blockquote cite="https://www.huxley.net/bnw/four.html">
+                    <p>
+                        In human memory, no deletion mechanism exists […] <br />
+                        Although human memory exhibits a decay characteristic,
+                        people do not delete. The deletion concept was invented
+                        to reuse expensive computer storage.
+                    </p>
+                    <footer>
+                        <cite>What if Mass Storage Were Free?</cite>
+                        <a href="">Copeland, 1980</a>
+                    </footer>
+                </blockquote>
+            </section>
+
+            <section>
+                <h3>Where are my authors?</h3>
+                <pre><span class="st">insert into</span> authors (<span class="var">id</span>, <span class="var">name</span>)
+values (<span class="num">1</span>, <span class="str">'George Copeland'</span>);
+
+<span class="st">select</span> * <span class="st">from</span> papers <span class="var">p</span> <span class="st">join</span> authors <span class="var">a</span> <span class="st">on</span> <span class="var">p</span>.<span class="var">author_id</span> = <span class="var">a</span>.<span class="var">id</span>;  <a href="#">Run code</a>
+                </pre>
+                <p>
+                    <b>Endb</b> relationships are dynamic. You can
+                    <span class="st">join</span> any two tables on any two
+                    columns. Adding an author with <span class="var">id</span>
+                    <span class="num">1</span> allows a join with the previous
+                    papers table.
+                </p>
+            </section>
+
+            <section class="banner">
+                <h4>
+                    After years of market research, the complaint of database
+                    users is universal:
+                </h4>
+                <h2>“I want to stop babysitting the database.”</h2>
+                <p>
+                    Buying data products requires babysitting. DBAs babysit
+                    Oracle indexes. Developers babysit Postgres query
+                    optimizations. Data engineers babysit ETL pipelines.
+                    Analysts babysit Redshift history. SREs babysit Aurora
+                    costs.
+                </p>
+                <p>
+                    Endb can't solve all these problems, but it attempts to be a
+                    jack-of-all-trades database that solves as many as it can —
+                    for as many people as it can.
+                </p>
+            </section>
+
+            <section>
+                <article class="r">
+                    <div>
+                        <img src="./assets/steven.png" alt="Hi, I'm Steven" />
+                    </div>
+                    <div>
+                        <h2>I'm Steven.</h2>
+                        <p>
+                            I started programming for fun in 1993 and
+                            professionally in 1996. I enjoy building teams as
+                            much as creating systems. Previously, I founded
+                            nilenso.
+                        </p>
+                        <p>I live in Canada and India.</p>
+                    </div>
+                </article>
+
+                <article>
+                    <div>
+                        <img src="./assets/håkan.png" alt="Hi, I'm Håkan" />
+                    </div>
+                    <div>
+                        <h2>I'm Håkan.</h2>
+                        <p>
+                            I started programming for fun in 1984 and
+                            professionally in 1998. I enjoy writing clear and
+                            terse Rust and Lisp. Previously, I was the architect
+                            of XTDB.
+                        </p>
+                        <p>I live in Sweden.</p>
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <ul>
+                <li>@mastodon.</li>
+                <li>@x.</li>
+                <li>@linkedin.</li>
+                <li>@discord.</li>
+                <li>@youtube.</li>
+                <li class="c">
+                    Copyright © 2023 Håkan Råberg and Steven Deobald
+                </li>
+            </ul>
+        </footer>
+
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>
