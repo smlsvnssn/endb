@@ -1,6 +1,6 @@
 @import url(./reset.css);
 :root {
-    /* Color styles */
+    /* backgrounds */
     --k-plus: repeat url(./cmyk/smallified/cmykify-k.png);
     --red: repeat url(./cmyk/smallified/cmykify-red.png);
     --blood: repeat url(./cmyk/smallified/cmykify-blood.png);
@@ -10,6 +10,8 @@
     --lemon: repeat url(./cmyk/smallified/cmykify-lemon.png);
     --light-raster: repeat url(./cmyk/w-raster.png), var(--w);
     --dark-raster: repeat url(./cmyk/k-raster.png), var(--k);
+
+    /* colours */
     --light: hsla(45, 100%, 98.4%, 1);
     --dark: hsla(96, 9.8%, 40%, 1);
     --code-number: hsla(22, 100%, 53.1%, 1);
@@ -20,6 +22,7 @@
     --bg-darker: hsla(40, 57.4%, 90.8%, 0.05);
     --bg-light: hsla(96, 9.8%, 40%, 0.1);
     --bg-lighter: hsla(96, 9.8%, 40%, 0.05);
+
     --topGradient: linear-gradient(
         180deg,
         rgba(38, 33, 22, 1) 0%,
@@ -46,7 +49,6 @@
 
     color-scheme: light dark;
     box-sizing: border-box;
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -60,7 +62,6 @@
 body {
     font-family: var(--sans);
     font-size: 1.25rem;
-    font-style: normal;
     font-weight: 400;
     line-height: 150%;
     letter-spacing: 0.025rem;
@@ -70,7 +71,6 @@ h1 {
     /* herotext */
     font-family: var(--sans);
     font-size: 10.5rem;
-    font-style: normal;
     font-weight: 900;
     line-height: 1;
     letter-spacing: -0.63rem;
@@ -82,7 +82,6 @@ h1 {
     color: var(--w);
     font-family: var(--sans);
     font-size: 3rem;
-    font-style: normal;
     font-weight: 600;
     line-height: 110%;
     letter-spacing: -0.06rem;
@@ -93,7 +92,6 @@ h3 {
     /* quote */
     font-family: var(--serif);
     font-size: 1.75rem;
-    font-style: normal;
     font-weight: 300;
     line-height: 150%; /* 2.625rem */
     letter-spacing: 0rem;
@@ -116,7 +114,6 @@ pre {
     max-width: 100%;
     font-family: var(--mono);
     font-size: 1.125rem;
-    font-style: normal;
     font-weight: 600;
     line-height: 150%;
     letter-spacing: 0rem;
@@ -129,7 +126,7 @@ pre {
     margin-top: 2.75rem;
     margin-bottom: 2.75rem;
 
-    a {
+    & a {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -156,19 +153,18 @@ blockquote {
     /* quote */
     font-family: var(--serif);
     font-size: 1.75rem;
-    font-style: normal;
     font-weight: 300;
     line-height: 150%; /* 2.625rem */
     letter-spacing: 0rem;
     position: relative;
     padding-left: 3.5rem;
 
-    p {
+    & p {
         margin-bottom: 1rem !important;
     }
 
-    cite,
-    a {
+    & cite,
+    & a {
         /* body */
         font-family: var(--sans);
         font-size: 1.25rem;
@@ -177,7 +173,7 @@ blockquote {
         letter-spacing: 0.025rem;
     }
 
-    a {
+    & a {
         display: block;
         font-weight: bold;
         text-decoration: underline;
@@ -247,6 +243,7 @@ header {
     width: calc(100% - 3rem);
     background: var(--topGradient);
     z-index: 1;
+
     .logo {
         flex: 1 0;
         height: 3.75rem;
@@ -257,31 +254,31 @@ header {
         mask-size: contain;
     }
 
-    ul {
+    & ul {
         flex: 0 0;
         padding-right: 1.25rem;
         gap: 1.5rem;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        li {
+        & li {
             font-size: 1rem;
             font-weight: 700;
             line-height: 150%; /* 1.5rem */
             letter-spacing: 0.02rem;
 
-            a {
+            & a {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 gap: 0.5rem;
             }
 
-            a:hover {
+            & a:hover {
                 text-decoration: wavy underline;
             }
 
-            a:before {
+            & a:before {
                 content: '';
                 display: block;
                 width: 1rem;
@@ -289,13 +286,13 @@ header {
                 background: var(--w-raster) no-repeat;
                 mask-size: contain;
             }
-            a.book:before {
+            & a.book:before {
                 mask-image: url(./assets/book.svg);
             }
-            a.cat:before {
+            & a.cat:before {
                 mask-image: url(./assets/cat.svg);
             }
-            a.quote:before {
+            & a.quote:before {
                 mask-image: url(./assets/quote.svg);
             }
         }
@@ -379,12 +376,12 @@ section.banner {
         max-width: var(--maxWidth);
         margin: auto;
     }
-    h4 {
+    & h4 {
         font-weight: 700;
         line-height: 150%;
         margin-bottom: 2.5rem;
     }
-    h2 {
+    & h2 {
         hanging-punctuation: first;
 
         background: var(--light-raster);
@@ -401,7 +398,7 @@ section.banner {
         line-height: 110%;
         letter-spacing: -0.18rem;
     }
-    p {
+    & p {
         font-family: var(--serif);
         font-size: 1.5rem;
         font-weight: 300;
@@ -409,7 +406,7 @@ section.banner {
         line-height: 150%; /* 2.25rem */
     }
 
-    p:has(+ p) {
+    & p:has(+ p) {
         margin-bottom: 1rem;
     }
 }
@@ -427,7 +424,7 @@ section article {
         text-align: end;
     }
 
-    h2 {
+    & h2 {
         font-size: 2.75rem;
         font-weight: 600;
         line-height: 110%; /* 3.025rem */
@@ -439,7 +436,7 @@ section article {
         color: transparent;
     }
 
-    div:has(img) {
+    & div:has(img) {
         flex: 0 0 16rem;
         border-radius: 50%;
         overflow: hidden;
@@ -452,7 +449,7 @@ section article {
         }
     }
 
-    p:not(:has(+ p)) {
+    & p:not(:has(+ p)) {
         margin-bottom: 0;
     }
 }
@@ -496,7 +493,7 @@ main + footer {
     section article div:has(img) {
         mix-blend-mode: multiply;
 
-        img {
+        & img {
             mix-blend-mode: screen;
         }
     }
@@ -535,7 +532,7 @@ main + footer {
 
     header ul {
         padding-right: 0;
-        li a {
+        & li a {
             gap: 0;
             text-indent: -1000rem;
 
