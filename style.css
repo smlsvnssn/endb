@@ -1,19 +1,20 @@
 @import url(./reset.css);
 :root {
     /* backgrounds */
-    --k-plus: repeat url(./cmyk/smallified/cmykify-k.png);
     --red: repeat url(./cmyk/smallified/cmykify-red.png);
     --blood: repeat url(./cmyk/smallified/cmykify-blood.png);
     --purple: repeat url(./cmyk/smallified/cmykify-purple.png);
     --orange: repeat url(./cmyk/smallified/cmykify-orange.png);
     --yellow: repeat url(./cmyk/smallified/cmykify-yellow.png);
     --lemon: repeat url(./cmyk/smallified/cmykify-lemon.png);
-    --light-raster: repeat url(./cmyk/w-raster.png), var(--w);
-    --dark-raster: repeat url(./cmyk/k-raster.png), var(--k);
+    --k-plus: repeat url(./cmyk/smallified/cmykify-k.png), var(--darker);
+    --light-raster: repeat url(./cmyk/w-raster.png), var(--light);
+    --dark-raster: repeat url(./cmyk/k-raster.png), var(--dark);
 
     /* colours */
     --light: hsla(45, 100%, 98.4%, 1);
     --dark: hsla(96, 9.8%, 40%, 1);
+    --darker: rgba(38, 33, 22, 1);
     --code-number: hsla(22, 100%, 53.1%, 1);
     --code-string: hsla(69, 39.2%, 38%, 1);
     --code-var: hsla(329, 44.1%, 60%, 1);
