@@ -1,4 +1,3 @@
 import './style.css'
 
-document.querySelector('#app').innerHTML = `
-`
+console.log('Nothing to see here yet.')
