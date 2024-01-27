@@ -457,6 +457,15 @@ section article {
 main + footer {
     background: url(./assets/decor-footer.webp) no-repeat top;
     color: var(--light);
+    a {
+        color: var(--light);
+        display: inline-block;
+        transition: all 0.5s;
+        &:hover {
+            color: var(--light);
+            translate: 0 -2px;
+        }
+    }
 
     text-align: end;
     font-size: 32px;
