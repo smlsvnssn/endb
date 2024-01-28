@@ -389,18 +389,50 @@ section.banner {
 
     &.image {
         div:has(img) {
-            overflow: hidden;
-            /* background: var(--w-raster); */
             mix-blend-mode: multiply;
 
             img {
                 width: 100%;
+                max-width: 100%;
                 mix-blend-mode: screen;
             }
         }
 
         p {
             margin-top: 2rem;
+            text-align: center;
+        }
+    }
+
+    &.video {
+        padding: 0;
+        max-width: 100%;
+        position: relative;
+
+        div:has(video) {
+            width: 100%;
+            max-width: 100%;
+            mix-blend-mode: multiply;
+
+            video {
+                display: block;
+                aspect-ratio: 21/9;
+                @media (width < 44rem) {
+                    aspect-ratio: 1/1;
+                }
+                width: 100%;
+                max-width: 100%;
+                mix-blend-mode: screen;
+                object-fit: cover;
+            }
+        }
+
+        p {
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
             text-align: center;
         }
     }
