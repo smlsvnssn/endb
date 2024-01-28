@@ -1,16 +1,5 @@
 @import url(./reset.css);
 :root {
-    /* backgrounds */
-    --red: repeat url(./cmyk/smallified/cmykify-red.png);
-    --blood: repeat url(./cmyk/smallified/cmykify-blood.png);
-    --purple: repeat url(./cmyk/smallified/cmykify-purple.png);
-    --orange: repeat url(./cmyk/smallified/cmykify-orange.png);
-    --yellow: repeat url(./cmyk/smallified/cmykify-yellow.png);
-    --lemon: repeat url(./cmyk/smallified/cmykify-lemon.png);
-    --k-plus: repeat url(./cmyk/smallified/cmykify-k.png), var(--darker);
-    --light-raster: repeat url(./cmyk/w-raster.png), var(--light);
-    --dark-raster: repeat url(./cmyk/k-raster.png), var(--dark);
-
     /* colours */
     --light: hsla(45, 100%, 98.4%, 1);
     --dark: hsla(96, 9.8%, 40%, 1);
@@ -23,6 +12,17 @@
     --bg-darker: hsla(40, 57.4%, 90.8%, 0.05);
     --bg-light: hsla(96, 9.8%, 40%, 0.1);
     --bg-lighter: hsla(96, 9.8%, 40%, 0.05);
+
+    /* backgrounds */
+    --red: repeat url(./cmyk/smallified/cmykify-red.png);
+    --blood: repeat url(./cmyk/smallified/cmykify-blood.png);
+    --purple: repeat url(./cmyk/smallified/cmykify-purple.png);
+    --orange: repeat url(./cmyk/smallified/cmykify-orange.png);
+    --yellow: repeat url(./cmyk/smallified/cmykify-yellow.png);
+    --lemon: repeat url(./cmyk/smallified/cmykify-lemon.png);
+    --k-plus: repeat url(./cmyk/smallified/cmykify-k.png), var(--darker);
+    --light-raster: repeat url(./cmyk/w-raster.png), var(--light);
+    --dark-raster: repeat url(./cmyk/k-raster.png), var(--dark);
 
     --topGradient: linear-gradient(
         180deg,
@@ -89,6 +89,66 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+p:has(+ p) {
+    margin-bottom: 1rem;
+}
+
+p:not(:has(+ p)) {
+    margin-bottom: 2.5rem;
+}
+
+a {
+    color: var(--w);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--w);
+    }
+}
+
+b {
+    font-weight: 700;
+}
+
+.st {
+    color: var(--code-statement);
+}
+.var {
+    color: var(--code-var);
+}
+.str {
+    color: var(--code-string);
+}
+.num {
+    color: var(--code-number);
+}
+.red {
+    background: var(--red);
+}
+.blood {
+    background: var(--blood);
+}
+.purple {
+    background: var(--purple);
+}
+.orange {
+    background: var(--orange);
+}
+.yellow {
+    background: var(--yellow);
+}
+.lemon {
+    background: var(--lemon);
+}
+
+.raster {
+    background: var(--w-raster);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* layout */
 h3 {
     /* quote */
     font-family: var(--serif);
@@ -127,7 +187,7 @@ pre {
     margin-top: 2.75rem;
     margin-bottom: 2.75rem;
 
-    & a {
+    a {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -160,12 +220,12 @@ blockquote {
     position: relative;
     padding-left: 3.5rem;
 
-    & p {
+    p {
         margin-bottom: 1rem !important;
     }
 
-    & cite,
-    & a {
+    cite,
+    a {
         /* body */
         font-family: var(--sans);
         font-size: 1.25rem;
@@ -174,7 +234,7 @@ blockquote {
         letter-spacing: 0.025rem;
     }
 
-    & a {
+    a {
         display: block;
         font-weight: bold;
         text-decoration: underline;
@@ -192,49 +252,6 @@ blockquote {
         background: var(--purple);
     }
 }
-
-p:has(+ p) {
-    margin-bottom: 1rem;
-}
-
-p:not(:has(+ p)) {
-    margin-bottom: 2.5rem;
-}
-
-a {
-    color: var(--w);
-    text-decoration: none;
-
-    &:hover {
-        color: var(--w);
-    }
-}
-
-b {
-    font-weight: 700;
-}
-
-.st {
-    color: var(--code-statement);
-}
-.var {
-    color: var(--code-var);
-}
-.str {
-    color: var(--code-string);
-}
-.num {
-    color: var(--code-number);
-}
-
-.raster {
-    background: var(--w-raster);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-/* layout */
 
 header {
     padding: 1.5rem;
@@ -255,31 +272,31 @@ header {
         mask-size: contain;
     }
 
-    & ul {
+    ul {
         flex: 0 0;
         padding-right: 1.25rem;
         gap: 1.5rem;
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        & li {
+        li {
             font-size: 1rem;
             font-weight: 700;
             line-height: 150%; /* 1.5rem */
             letter-spacing: 0.02rem;
 
-            & a {
+            a {
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
                 gap: 0.5rem;
             }
 
-            & a:hover {
+            a:hover {
                 text-decoration: wavy underline;
             }
 
-            & a:before {
+            a:before {
                 content: '';
                 display: block;
                 width: 1rem;
@@ -287,13 +304,13 @@ header {
                 background: var(--w-raster) no-repeat;
                 mask-size: contain;
             }
-            & a.book:before {
+            a.book:before {
                 mask-image: url(./assets/book.svg);
             }
-            & a.cat:before {
+            a.cat:before {
                 mask-image: url(./assets/cat.svg);
             }
-            & a.quote:before {
+            a.quote:before {
                 mask-image: url(./assets/quote.svg);
             }
         }
@@ -326,11 +343,10 @@ section.hero nav {
         justify-content: center;
         align-items: center;
         gap: 0.5rem;
-        flex: 1 0 0;
+        flex: 1;
 
         color: var(--light);
         font-size: 1.25rem;
-        font-style: normal;
         font-weight: 900;
         line-height: normal;
         letter-spacing: 0.025rem;
@@ -347,42 +363,58 @@ section.hero nav {
     }
 
     .red {
-        background: var(--red);
         border-radius: 0.125rem 0.125rem 0.125rem 2rem;
     }
-    .blood {
-        background: var(--blood);
-    }
     .purple {
-        background: var(--purple);
         border-radius: 0.125rem 2rem 0.125rem 0.125rem;
     }
 }
 
 section.banner {
-    background: url(./assets/decor2.webp) no-repeat center left,
-        url(./assets/decor.webp) no-repeat center right, var(--purple);
-
-    @media (width < 100rem) {
-        background: url(./assets/decor.webp) no-repeat center right,
-            var(--purple);
-    }
     max-width: calc(100% - 3rem);
     width: 100%;
     padding: 9.5rem 1.5rem;
 
     color: var(--light);
 
-    & * {
+    &.decor {
+        background: url(./assets/decor2.webp) no-repeat center left,
+            url(./assets/decor.webp) no-repeat center right, var(--purple);
+
+        @media (width < 100rem) {
+            background: url(./assets/decor.webp) no-repeat center right,
+                var(--purple);
+        }
+    }
+
+    &.image {
+        div:has(img) {
+            overflow: hidden;
+            /* background: var(--w-raster); */
+            mix-blend-mode: multiply;
+
+            img {
+                width: 100%;
+                mix-blend-mode: screen;
+            }
+        }
+
+        p {
+            margin-top: 2rem;
+            text-align: center;
+        }
+    }
+
+    * {
         max-width: var(--maxWidth);
         margin: auto;
     }
-    & h4 {
+    h4 {
         font-weight: 700;
         line-height: 150%;
         margin-bottom: 2.5rem;
     }
-    & h2 {
+    h2 {
         hanging-punctuation: first;
 
         background: var(--light-raster);
@@ -399,15 +431,21 @@ section.banner {
         line-height: 110%;
         letter-spacing: -0.18rem;
     }
-    & p {
+    p {
         font-family: var(--serif);
         font-size: 1.5rem;
         font-weight: 300;
         letter-spacing: 0;
         line-height: 150%; /* 2.25rem */
+
+        b {
+            font-family: var(--sans);
+            font-weight: 900;
+            letter-spacing: -0.075rem;
+        }
     }
 
-    & p:has(+ p) {
+    p:has(+ p) {
         margin-bottom: 1rem;
     }
 }
@@ -425,7 +463,7 @@ section article {
         text-align: end;
     }
 
-    & h2 {
+    h2 {
         font-size: 2.75rem;
         font-weight: 600;
         line-height: 110%; /* 3.025rem */
@@ -437,7 +475,7 @@ section article {
         color: transparent;
     }
 
-    & div:has(img) {
+    div:has(img) {
         flex: 0 0 16rem;
         border-radius: 50%;
         overflow: hidden;
@@ -450,7 +488,7 @@ section article {
         }
     }
 
-    & p:not(:has(+ p)) {
+    p:not(:has(+ p)) {
         margin-bottom: 0;
     }
 }
@@ -503,7 +541,7 @@ main + footer {
     section article div:has(img) {
         mix-blend-mode: multiply;
 
-        & img {
+        img {
             mix-blend-mode: screen;
         }
     }
@@ -542,7 +580,7 @@ main + footer {
 
     header ul {
         padding-right: 0;
-        & li a {
+        li a {
             gap: 0;
             text-indent: -1000rem;
 
