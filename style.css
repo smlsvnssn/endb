@@ -149,6 +149,18 @@ b {
     color: transparent;
 }
 
+hr {
+    display: block;
+    height: 1rem;
+    border: none;
+    border-radius: 0.125rem 2rem 0.125rem 2rem;
+
+    background: var(--red);
+
+    margin-top: 2.75rem;
+    margin-bottom: 2.75rem;
+}
+
 /* layout */
 h3 {
     /* quote */
@@ -537,12 +549,15 @@ section article {
 table {
     td {
         padding-right: 1rem;
-        padding-bottom: 2.5rem;
+        padding-bottom: 2.75rem;
 
-        &.bibtexnumber a {
-            text-decoration: none;
+        &.bibtexnumber {
+            font-size: 0.75rem;
+            vertical-align: top;
+            a {
+                text-decoration: none;
+            }
         }
-
         em {
             font-size: 1.125rem;
             font-family: var(--serif);
