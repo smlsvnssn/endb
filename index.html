@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Literata:opsz,wght@7..72,300&family=Outfit:wght@400..900&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;1,7..72,400&family=Outfit:wght@400..900&display=swap"
             rel="stylesheet"
         />
         <title>endatabas</title>
@@ -14,13 +14,30 @@
     <body>
         <!--         <div id="app"></div> -->
         <header>
-            <div class="logo">endatabas</div>
+            <div class="logo"><a href="/">endatabas</a></div>
+
             <nav>
                 <ul>
-                    <li><a class="book" href="#">The book</a></li>
-                    <li><a class="cat" href="#">The code</a></li>
                     <li>
-                        <a class="quote" href="#">The bibliography</a>
+                        <a
+                            class="book"
+                            href="https://docs.endatabas.com/"
+                            target="_blank"
+                            >The book</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="cat"
+                            href="https://github.com/endatabas/endb"
+                            target="_blank"
+                            >The code</a
+                        >
+                    </li>
+                    <li>
+                        <a class="quote" href="/bibliography.html"
+                            >The bibliography</a
+                        >
                     </li>
                 </ul>
             </nav>
@@ -49,9 +66,12 @@
                     <a href="#" class="btn blood">Try the alpha</a>
                     <a href="#" class="btn purple">Watch the demo</a>
                 </nav>
-            </section>
+                <pre>
+mkdir -p endb_data
+docker pull endatabas/endb
+docker run --rm -p 3803:3803 -v endb_data:/app/endb_data docker.io/endatabas/endb</pre
+                >
 
-            <section>
                 <p>Explore what you can do with it:</p>
                 <pre>
 <span class="st">insert into</span> papers (<span class="var">id</span>, <span class="var">author_id</span>, <span class="var">title</span>, <span class="var">year</span>)
@@ -182,7 +202,9 @@ values (<span class="num">1</span>, <span class="str">'George Copeland'</span>);
                             I started programming for fun in 1993 and
                             professionally in 1996. I enjoy building teams as
                             much as creating systems. Previously, I founded
-                            nilenso.
+                            <a href="https://www.nilenso.com/" target="_blank"
+                                >nilenso</a
+                            >.
                         </p>
                         <p>I live in Canada and India.</p>
                     </div>
@@ -198,7 +220,10 @@ values (<span class="num">1</span>, <span class="str">'George Copeland'</span>);
                             I started programming for fun in 1984 and
                             professionally in 1998. I enjoy writing clear and
                             terse Rust and Lisp. Previously, I was the architect
-                            of XTDB.
+                            of
+                            <a href="https://www.xtdb.com/" target="_blank"
+                                >XTDB</a
+                            >.
                         </p>
                         <p>I live in Sweden.</p>
                     </div>
@@ -208,11 +233,27 @@ values (<span class="num">1</span>, <span class="str">'George Copeland'</span>);
 
         <footer>
             <ul>
-                <li><a href="">@mastodon.</a></li>
-                <li><a href="">@x.</a></li>
-                <li><a href="">@linkedin.</a></li>
-                <li><a href="">@discord.</a></li>
-                <li><a href="">@youtube.</a></li>
+                <li>
+                    <a href="https://mastodon.social/@endatabas">@mastodon.</a>
+                </li>
+                <li><a href="https://twitter.com/endatabas">@x.</a></li>
+                <li>
+                    <a href="https://www.linkedin.com/company/endatabas/">
+                        @linkedin.
+                    </a>
+                </li>
+                <li>
+                    <a href="https://discord.com/invite/fVfCdudHJD">
+                        @discord.
+                    </a>
+                </li>
+                <li>
+                    <a
+                        href="https://www.youtube.com/channel/UCmSaCkZB_cpPSsDT1cWvr-A"
+                    >
+                        @youtube.
+                    </a>
+                </li>
                 <li class="c">
                     Copyright © 2023 Håkan Råberg and Steven Deobald
                 </li>

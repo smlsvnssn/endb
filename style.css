@@ -86,7 +86,8 @@ h1 {
     font-weight: 600;
     line-height: 110%;
     letter-spacing: -0.06rem;
-    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    margin-bottom: 0;
 }
 
 p:has(+ p) {
@@ -99,7 +100,7 @@ p:not(:has(+ p)) {
 
 a {
     color: var(--w);
-    text-decoration: none;
+    text-decoration: underline;
 
     &:hover {
         color: var(--w);
@@ -265,11 +266,17 @@ header {
     .logo {
         flex: 1 0;
         height: 3.75rem;
-        text-indent: -9999rem;
         background: var(--w-raster);
         mask-image: url(/assets/endb-logo.svg);
         mask-repeat: no-repeat;
         mask-size: contain;
+
+        a {
+            display: block;
+            height: 100%;
+            width: 10rem;
+            text-indent: -9999rem;
+        }
     }
 
     ul {
@@ -288,6 +295,7 @@ header {
             a {
                 display: flex;
                 justify-content: flex-end;
+                text-decoration: none;
                 align-items: center;
                 gap: 0.5rem;
             }
@@ -351,6 +359,7 @@ section.hero nav {
         line-height: normal;
         letter-spacing: 0.025rem;
         text-transform: uppercase;
+        text-decoration: none;
 
         border-radius: 0.125rem;
         transition: all 0.5s;
@@ -525,6 +534,24 @@ section article {
     }
 }
 
+table {
+    td {
+        padding-right: 1rem;
+        padding-bottom: 2.5rem;
+
+        &.bibtexnumber a {
+            text-decoration: none;
+        }
+
+        em {
+            font-size: 1.125rem;
+            font-family: var(--serif);
+            font-style: italic;
+            letter-spacing: 0;
+        }
+    }
+}
+
 main + footer {
     background: url(./assets/decor-footer.webp) no-repeat top;
     color: var(--light);
@@ -532,16 +559,17 @@ main + footer {
         color: var(--light);
         display: inline-block;
         transition: all 0.5s;
+        text-decoration: none;
         &:hover {
             color: var(--light);
-            translate: 0 -2px;
+            translate: 2px;
         }
     }
 
     text-align: end;
     font-size: 32px;
     font-weight: 700;
-    line-height: 110px; /*6.85rem; 340.625% */
+    line-height: 109px; /*6.85rem; 340.625% */
     letter-spacing: -0.04rem;
 
     padding: 0 2rem;
