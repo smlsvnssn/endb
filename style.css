@@ -157,8 +157,8 @@ hr {
 
     background: var(--red);
 
-    margin-top: 2.75rem;
-    margin-bottom: 2.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
 }
 
 /* layout */
@@ -549,7 +549,12 @@ section article {
 table {
     td {
         padding-right: 1rem;
-        padding-bottom: 2.75rem;
+        padding-bottom: 2.5rem;
+
+        &:last-child {
+            word-break: break-word;
+            padding-right: 0;
+        }
 
         &.bibtexnumber {
             font-size: 0.75rem;
