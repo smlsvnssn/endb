@@ -92,7 +92,49 @@ docker pull endatabas/endb
 docker run --rm -p 3803:3803 -v endb_data:/app/endb_data docker.io/endatabas/endb</pre
                 >
 
-                <p>Explore what you can do with it:</p>
+                <p>
+                    Explore what you can do with it:
+
+                    <span class="caseToggle">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-case-lower"
+                        >
+                            <circle cx="7" cy="12" r="3" />
+                            <path d="M10 9v6" />
+                            <circle cx="17" cy="12" r="3" />
+                            <path d="M14 7v8" />
+                        </svg>
+                        <input type="checkbox" name="case" id="caseToggle" />
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-case-upper"
+                        >
+                            <path d="m3 15 4-8 4 8" />
+                            <path d="M4 13h6" />
+                            <path
+                                d="M15 11h4.5a2 2 0 0 1 0 4H15V7h4a2 2 0 0 1 0 4"
+                            />
+                        </svg>
+                    </span>
+                </p>
+
                 <pre>
 <span class="st">insert into</span> papers (<span class="var">id</span>, <span class="var">author_id</span>, <span class="var">title</span>, <span class="var">year</span>)
 <span class="st">values</span> (<span class="num">1</span>, <span class="num">1</span>, <span class="str">'What if Mass Storage Were Free?'</span>, <span class="num">1680</span>);
@@ -112,7 +154,7 @@ select * <span class="st">from</span> papers; <a href="#">Run code</a></pre>
                     
 <span class="st">select</span> * <span class="st">from</span> papers; 
 
-<span class="st">select</span> * <span class="st">from</span> <span class="st">for</span> <span class="var">SYSTEM_TIME</span> <span class="st">as of</span> <span class="num now">2023-08-17T00:00:00</span>;  <a href="#">Run code</a>
+<span class="st">select</span> * <span class="st">from</span> papers <span class="st">for</span> <span class="st">system_time</span> <span class="st">as of</span> <span class="num now">2023-08-17T00:00:00</span>;  <a href="#">Run code</a>
                 </pre>
                 <p>
                     <b>Endb</b> is immutable, so it does not permit destructive

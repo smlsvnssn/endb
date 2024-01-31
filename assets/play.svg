@@ -1,4 +1,3 @@
 <svg width="13" height="15" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<path d="M1.5 1.14307L11.5 7.57164L1.5 14.0002V1.14307Z" stroke="#FFFDF7" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M1.5 1.14307L11.5 7.57164L1.5 14.0002V1.14307Z" stroke="url(#pattern0)" stroke-opacity="0.03" stroke-width="1.42857" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1.5 1.14307L11.5 7.57164L1.5 14.0002V1.14307Z" stroke="hsla(96, 9.8%, 40%, .5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
