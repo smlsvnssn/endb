@@ -291,7 +291,7 @@ input[type='checkbox'] {
     position: relative;
     margin: 0;
     cursor: pointer;
-    --borderWidth: 2px;
+    --borderWidth: 1.5px;
     border: var(--borderWidth) solid var(--w);
 
     &:after {
@@ -324,15 +324,15 @@ input[type='checkbox'] {
 p:has(.caseToggle) {
     display: flex;
     justify-content: space-between;
-    span {
+
+    label {
+        cursor: pointer;
+
         display: flex;
         gap: 0.25rem;
         justify-content: flex-end;
         align-items: center;
-
-        svg {
-            margin-top: 0.125rem;
-        }
+        font-size: 1rem;
     }
 }
 
