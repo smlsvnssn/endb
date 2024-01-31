@@ -111,6 +111,15 @@ b {
     font-weight: 700;
 }
 
+.st,
+.var,
+.str,
+.num {
+    font-family: var(--mono);
+    font-size: 1.125rem;
+    font-weight: 600;
+    letter-spacing: 0rem;
+}
 .st {
     color: var(--code-statement);
 }
