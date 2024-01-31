@@ -18,4 +18,6 @@ try {
     // It's alright
 }
 
-addEventListener('change', e => toggleCase(e.target.checked))
+document
+    .querySelector('#caseToggle')
+    .addEventListener('change', e => toggleCase(e.target.checked))
